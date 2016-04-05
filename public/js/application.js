@@ -18,6 +18,7 @@ var loginLinkListener = function(){
       if ( $( '#login_form' ).length === 1 ) {
         $( '#login_form' ).remove();
       } else {
+        $( '#new_user_form' ).remove();
         $( 'body' ).append( data );
       }
     });
@@ -57,11 +58,23 @@ var createUserLinkListener = function(){
     });
 
     ajaxRequest.done( function( data ){
+      if ( $( "#new_user_form" ).length === 1 ) {
+        $( "#new_user_form" ).remove();
+      } else {
+      $( "#login_form" ).remove();
       $( "body" ).append( data );
+      }
     });
 
     ajaxRequest.fail( function(){
       console.log( "Create new user request failed" );
     });
   });
+}
+
+var createUserSubmitListener = function(){
+  $( "body" ).on( "submit", "#new_user_form", function( event ){
+    event.preventDefault();
+
+  })
 }
