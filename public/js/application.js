@@ -2,6 +2,7 @@ $( document ).ready( function() {
 
   loginLinkListener();
   loginSubmitListener();
+  createUserLinkListener();
 });
 
 var loginLinkListener = function(){
@@ -30,7 +31,7 @@ var loginLinkListener = function(){
 var loginSubmitListener = function(){
   $( "body" ).on( "submit", "#login_form", function( event ){
     event.preventDefault();
-    var form_data = $(this).serialize();
+    var form_data = $( this ).serialize();
     var ajaxRequest = $.ajax({
       method: "post",
       url: "/users/login",
@@ -48,8 +49,19 @@ var loginSubmitListener = function(){
 }
 
 var createUserLinkListener = function(){
-  $( "create_link" ).on("click", function(event){
+  $( "#create_link" ).on( "click", function( event ){
     event.preventDefault();
+    var ajaxRequest = $.ajax({
+      method: "get",
+      url: "/users/new"
+    });
 
+    ajaxRequest.done( function( data ){
+      $( "body" ).append( data );
+    });
+
+    ajaxRequest.fail( function(){
+      console.log( "Create new user request failed" );
+    });
   });
 }

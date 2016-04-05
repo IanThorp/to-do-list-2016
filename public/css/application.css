@@ -41,7 +41,7 @@ header #logout_link {
 
 /*Login*/
 
-#login_form {
+.user_form {
   margin: 1%;
   float: right;
   color: #D1D1D1;
@@ -51,7 +51,7 @@ header #logout_link {
   padding-bottom: 1%;
 }
 
-#login_form input{
+.user_form input{
   color: black;
   margin: 1%;
 }
