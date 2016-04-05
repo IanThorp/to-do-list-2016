@@ -1,15 +1,19 @@
-<form action="/users/new" method="post">
-  <label for='input_first_name'>First Name:</label>
-  <input id='input_first_name'type='text' name='user[first_name]' placeholder='First Name'>
-  <label for='input_last_name'>Last Name:</label>
-  <input id='input_last_name'type='text' name='user[last_name]' placeholder='Last Name'>
-  <label for='input_user_name'>User Name:</label>
-  <input id='input_user_name'type='text' name='user[user_name]' placeholder='User Name'>
-  <label for='input_password'>Password:</label>
-  <input id='input_password'type='text' name='user[password]' placeholder='Password'>
-  <label for='input_DOB'>Birthday:</label>
-  <input id='input_DOB'type='text' name='user[date_of_birth]' placeholder='DD/MM/YYYY'>
+<form id="new_user_form" class="user_form" action="/users/new" method="post">
 
+  <label for='input_first_name'>First Name:</label> <br>
+  <input id='input_first_name'type='text' name='user[first_name]'> <br>
+
+  <label for='input_last_name'>Last Name:</label> <br>
+  <input id='input_last_name'type='text' name='user[last_name]'> <br>
+
+  <label for='input_user_name'>User Name:</label> <br>
+  <input id='input_user_name'type='text' name='user[user_name]'> <br>
+
+  <label for='input_password'>Password:</label> <br>
+  <input id='input_password'type='text' name='user[password]'> <br>
+
+  <label for='input_DOB'>Birthday:</label> <br>
+  <input id='input_DOB'type='text' name='user[date_of_birth]' placeholder='DD/MM/YYYY'> <br>
 
   <input type='submit' value='Create Account'>
 </form>

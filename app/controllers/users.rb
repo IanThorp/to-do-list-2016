@@ -11,7 +11,7 @@ post '/users/login' do
   if user.authenticate(params[:password])
     session[:id] = user.id
   else
-    return "error"
+    return "Password Incorrect"
   end
   if !request.xhr?
     redirect '/'
@@ -31,7 +31,9 @@ post '/users' do
   if user.save
     session[:id] = user.id
     if !request.xhr?
-      erb: '/'
+      erb :'/'
     end
+  else
+    return user.errors.full_messages
   end
 end

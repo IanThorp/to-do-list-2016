@@ -3,6 +3,14 @@ class User < ActiveRecord::Base
 
   has_many :lists
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :user_name, presence: true
+  validates :date_of_birth, presence: true
+
+
+
+
   def password
     @password ||= Password.new(password_hash)
   end
